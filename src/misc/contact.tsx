@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import styles from "./contact.module.css";
 
@@ -36,16 +36,17 @@ const getClass = (i: number, current: number) => {
   return styles.email;
 };
 
-const getWidth = (email: string) => {
+const getWidth = (email: string, el?: HTMLElement | null) => {
   if (typeof window !== "undefined") {
-    const span = document.createElement("p");
+    const wrapperEl = el ?? document.body;
+    const span = document.createElement("span");
     span.innerText = email;
     span.id = "textMeasure";
     span.style.fontSize = "16";
-    document.body.appendChild(span);
+    wrapperEl.appendChild(span);
     const { width } = span.getBoundingClientRect();
-    document.body.removeChild(span);
-    return `${width + 6}px`;
+    wrapperEl.removeChild(span);
+    return `${width + 1}px`;
   }
   return "auto";
 };
@@ -56,6 +57,7 @@ export const Contact = () => {
   const [placeholderWidth, setPlaceholderWidth] = useState(
     getWidth(emails[current])
   );
+  const wrapper = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const updateEmail = () => {
@@ -73,11 +75,11 @@ export const Contact = () => {
   }, [hovered]);
 
   useEffect(() => {
-    setPlaceholderWidth(getWidth(emails[current]));
+    setPlaceholderWidth(getWidth(emails[current], wrapper.current));
   }, [current]);
 
   return (
-    <div className={styles.emailWrap}>
+    <div className={styles.emailWrap} ref={wrapper}>
       <a
         className="text-berkeley-blue hover:brightness-50 transition-all duration-200"
         href={`mailto:${emails[current]}@bypaul.dev?subject=Site%20Contact`}

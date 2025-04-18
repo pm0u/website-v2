@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@theme {
+  --color-platinum: #e0e0e0;
+  --color-berkeley-blue: #1b365d;
+  --color-saffron: #f2c75c;
+  --color-burnt-orange: #a04000;
+  --color-jet: #333;
+  --color-black: #000;
+}

@@ -1,0 +1,44 @@
+.emailWrap {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  --time: 0.8s;
+  --easing: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.email {
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  transition: bottom var(--time) var(--easing);
+}
+
+.emailActive {
+  bottom: 0%;
+}
+
+.emailLast {
+  opacity: 0;
+}
+
+.emailPrevious {
+  bottom: -100%;
+}
+
+.emailPlaceholder {
+  display: inline-block;
+  opacity: 0;
+  width: var(--textWidth);
+  transition: width var(--time) var(--easing);
+}
+
+#textMeasure {
+  position: absolute;
+  visibility: hidden;
+  height: auto;
+  width: auto;
+  white-space: nowrap;
+  display: block;
+  opacity: 0;
+  z-index: -100;
+}

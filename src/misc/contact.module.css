@@ -11,18 +11,19 @@
 .emailWrap::after {
   content: "";
   position: absolute;
-  width: 100%;
-  transform: scaleX(0);
+  width: 98%;
+  scale: 0 1;
+  translate: -50% 0;
   height: 1px;
-  bottom: 0;
-  left: 0;
+  bottom: 1px;
+  left: 50%;
   background-color: var(--color-berkeley-blue);
   transform-origin: bottom center;
-  transition: transform 0.2s ease-out;
+  transition: scale 0.15s ease-out;
 }
 
 .emailWrap:hover::after {
-  transform: scaleX(1);
+  scale: 1 1;
   transform-origin: bottom center;
 }
 

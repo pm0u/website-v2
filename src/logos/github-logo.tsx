@@ -1,4 +1,6 @@
-export const GitHub = (props: React.HTMLAttributes<SVGSVGElement>) => (
+import type { JSX } from "preact";
+
+export const GitHub = (props: JSX.SVGAttributes<SVGSVGElement>) => (
   <svg viewBox="0 0 98 96" {...props}>
     <title>GitHub</title>
     <path

@@ -1,4 +1,6 @@
-export const LinkedIn = (props: React.HTMLAttributes<SVGSVGElement>) => (
+import type { JSX } from "preact";
+
+export const LinkedIn = (props: JSX.SVGAttributes<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 310" {...props}>
     <title>LinkedIn</title>
     <path

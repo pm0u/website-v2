@@ -1,4 +1,6 @@
-export const Printables = (props: React.HTMLAttributes<SVGSVGElement>) => (
+import type { JSX } from "preact";
+
+export const Printables = (props: JSX.SVGAttributes<SVGSVGElement>) => (
   <svg viewBox="0 0 250 300" {...props}>
     <title>Printables</title>
     <g>

@@ -1,4 +1,6 @@
-export const GitHub = (props: React.HTMLAttributes<SVGSVGElement>) => (
+export const GitHub = (
+  props: import("preact").ComponentProps<"svg">
+) => (
   <svg viewBox="0 0 98 96" {...props}>
     <title>GitHub</title>
     <path

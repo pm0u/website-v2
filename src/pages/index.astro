@@ -1,0 +1,44 @@
+---
+import { Printables } from "../logos/printables-logo";
+import { Strava } from "../logos/strava-logo";
+import { GitHub } from "../logos/github-logo";
+import { LinkedIn } from "../logos/linkedin-logo";
+import { Contact } from "../misc/contact";
+import BaseLayout from "../layouts/base-layout.astro";
+---
+
+<BaseLayout title="paul mourer | software engineer - tinkerer - maker - cyclist">
+  <div
+    class="flex min-h-screen flex-col items-center justify-center gap-16 bg-platinum p-8 pb-20 text-berkeley-blue sm:p-20"
+  >
+    <main class="row-start-2 flex flex-col items-center gap-4">
+      <div class="flex flex-col items-center gap-1">
+        <h1 class="text-3xl font-bold">paul mourer</h1>
+        <p>leadville, co</p>
+      </div>
+      <div class="text-center text-jet">
+        <p>software engineer</p>
+        <p>tinkerer</p>
+        <p>maker</p>
+        <p>cyclist</p>
+      </div>
+      <div class="flex gap-4 text-burnt-orange">
+        <a href="https://www.github.com/pm0u">
+          <GitHub className="h-4 w-auto transition-all duration-200 hover:brightness-75" />
+        </a>
+        <a href="https://www.linkedin.com/in/pmou">
+          <LinkedIn className="h-4 w-auto transition-all duration-200 hover:brightness-75" />
+        </a>
+        <a href="https://www.printables.com/@PaulMourer_2841132">
+          <Printables className="h-4 w-auto transition-all duration-200 hover:brightness-75" />
+        </a>
+        <a href="https://www.strava.com/athletes/6217227">
+          <Strava className="h-4 w-auto transition-all duration-200 hover:brightness-75" />
+        </a>
+      </div>
+      <div>
+        <Contact client:load />
+      </div>
+    </main>
+  </div>
+</BaseLayout>

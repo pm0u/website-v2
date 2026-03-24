@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "preact/hooks";
 
 import styles from "./contact.module.css";
 
-let TIMEOUT: NodeJS.Timeout | null = null;
+let TIMEOUT: ReturnType<typeof setTimeout> | null = null;
 
 const LENGTH = 8000;
 
@@ -96,7 +96,6 @@ export const Contact = () => {
         >
           <span
             className={styles.emailPlaceholder}
-            // @ts-expect-error its a variable
             style={{ "--textWidth": placeholderWidth }}
           >
             {emails[current]}

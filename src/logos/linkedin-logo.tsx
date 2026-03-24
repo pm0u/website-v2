@@ -1,4 +1,6 @@
-export const LinkedIn = (props: JSX.SVGAttributes<SVGSVGElement>) => (
+export const LinkedIn = (
+  props: import("preact").ComponentProps<"svg">
+) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 310" {...props}>
     <title>LinkedIn</title>
     <path

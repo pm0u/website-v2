@@ -1,4 +1,6 @@
-export const Strava = (props: JSX.SVGAttributes<SVGSVGElement>) => (
+export const Strava = (
+  props: import("preact").ComponentProps<"svg">
+) => (
   <svg viewBox="0 0 24 24" {...props}>
     <title>Strava</title>
     <path

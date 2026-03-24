@@ -96,7 +96,6 @@ export const Contact = () => {
         >
           <span
             className={styles.emailPlaceholder}
-            // @ts-expect-error its a variable
             style={{ "--textWidth": placeholderWidth }}
           >
             {emails[current]}
